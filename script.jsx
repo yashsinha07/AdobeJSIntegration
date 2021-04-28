@@ -31,7 +31,7 @@ appNameText.textItem.contents = input.appName;
 
 // Download the image
 var imageURL = input.iconUrl;
-var downloadedImagePath = "/Users/yashsinha/Downloads/icon.png";
+var downloadedImagePath = "/Users/yash.sinha/Downloads/icon.png";
 app.system("curl -o " + downloadedImagePath + " " +  imageURL);
 
 //Place the app icon
