@@ -23,6 +23,24 @@ app.get("/app/:storeName/:appId", async function(req, res){
             console.log(err);
         } else {
             console.log("File sucessfully written");
+            
+            //------------------
+            
+            const { exec } = require("child_process");
+            //shell commands for windows and macOS may differ.
+            exec("open -a /Users/yash.sinha/Desktop/AdobeJSIntegration/droplet.app /Users/yash.sinha/Downloads/Ad-format-final-1.psd", (error, stdout, stderr) => {
+                if (error) {
+                    console.log(`error: ${error.message}`);
+                    return;
+                }
+                if (stderr) {
+                    console.log(`stderr: ${stderr}`);
+                    return;
+                }
+                console.log(`stdout: ${stdout}`);
+            });
+
+            //-------------------
         }
     });
 });
